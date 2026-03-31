@@ -99,7 +99,7 @@ set.seed(1909)
 #   lower.rho = lb.rho, upper.rho = ub.rho,
 #   reference.group = "Placebo", 
 #   outclab = outcomes,
-#   n.iter = 30000, n.burnin = 10000, n.thin = 20)
+#   n.iter = 30000, n.burnin = 10000)
 # #
 # saveRDS(mvNMA.standard,
 #   file = paste0(subdir, "results/mvNMA.standard.rds"))
@@ -109,17 +109,13 @@ set.seed(1909)
 #   lower.rho = lb.rho, upper.rho = ub.rho,
 #   method = "DM", reference.group = "Placebo",
 #   outclab = outcomes,n.domain = 2, ## first two pairwise objects (pw1,pw2) related to one outcome domain (i.e. efficacy) and the rest in the other (i.e. safety)
-#   n.iter = 30000, n.burnin = 10000, n.thin = 20)
-# #
-#saveRDS(mvNMA.DM, file = paste0(subdir, "results/mvNMA.DM.rds"))
-
-
-#
+#   n.iter = 30000, n.burnin = 10000)
+# # #
+# saveRDS(mvNMA.DM, file = paste0(subdir, "results/mvNMA.DM.rds"))
 #
 # Load results stored in "results" folder
 #
 #
-
 # mvNMA(standard)
 mvNMA.standard <- readRDS(paste0(subdir, "results/mvNMA.standard.rds"))
 # mvNMA(DM)
