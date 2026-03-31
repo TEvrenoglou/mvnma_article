@@ -90,10 +90,10 @@ outcomes <- c("Early_Response", "Early_Remission", "Adverse_events",
 # rho12, rho13, rho14, rho15, rho23, rho24, rho25, rho34, rho35, rho45 where 
 # 1: Early_Response, 2: Early_Remission, 3: Adverse Events,
 # 4: Loss to follow up, 5: Loss_to_follow_up_AE
-# lb.rho <- c(0, -1, -1, -1, -1, -1, -1, 0, 0, 0)
-# ub.rho <- c(1, 0, 0, 0, 0, 0, 0, 1, 1, 1)
+lb.rho <- c(0, -1, -1, -1, -1, -1, -1, 0, 0, 0)
+ub.rho <- c(1, 0, 0, 0, 0, 0, 0, 1, 1, 1)
 #
-# set.seed(1909)
+set.seed(1909)
 # Fit the mvNMA(standard) model
 # mvNMA.standard<- mvnma(pw1, pw2, pw3, pw4, pw5,
 #   lower.rho = lb.rho, upper.rho = ub.rho,
@@ -107,11 +107,11 @@ outcomes <- c("Early_Response", "Early_Remission", "Adverse_events",
 # Fit the mvNMA(DM) model
 # mvNMA.DM <- mvnma(pw1, pw2, pw3, pw4, pw5,
 #   lower.rho = lb.rho, upper.rho = ub.rho,
-#   method = "DM", reference.group = "Placebo", 
-#   outclab = outcomes,
+#   method = "DM", reference.group = "Placebo",
+#   outclab = outcomes,n.domain = 2, ## first two pairwise objects (pw1,pw2) related to one outcome domain (i.e. efficacy) and the rest in the other (i.e. safety)
 #   n.iter = 30000, n.burnin = 10000, n.thin = 20)
 # #
-# saveRDS(mvNMA.DM, file = paste0(subdir, "results/mvNMA.DM.rds"))
+#saveRDS(mvNMA.DM, file = paste0(subdir, "results/mvNMA.DM.rds"))
 
 
 #
