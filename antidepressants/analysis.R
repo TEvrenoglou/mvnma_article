@@ -128,8 +128,24 @@ mvNMA.DM$cor
 # Save model results in separate forest plots
 forest(mvNMA.standard, file = paste0(subdir, "figures/forest_standard.pdf"))
 forest(mvNMA.DM, file = paste0(subdir, "figures/forest_DM.pdf"))
-
-
+#
+# Export traceplots to check convergence 
+# create MCMC objects using "as.mcmc" function of mvnma
+mcmc.standard <- as.mcmc(mvNMA.standard,drop.reference.group = TRUE)
+mcmc.DM <- as.mcmc(mvNMA.DM,drop.reference.group = TRUE)
+# Create plots
+library(coda)
+# mvNMA(standard)
+trace.standard <- "traceplot_mvNMA.standard.pdf"
+pdf(file = paste0(subdir, "figures/traceplot_mvNMA.standard.pdf.pdf"),width=11)
+oldpar <- par(mfrow = c(4, 5))
+traceplot(mcmc.standard)
+dev.off()
+# mvNMA(DM)
+pdf(file = paste0(subdir, "figures/traceplot_mvNMA.DM.pdf.pdf"),width=11)
+oldpar <- par(mfrow = c(4, 5))
+traceplot(mcmc.DM)
+dev.off()
 #
 #
 # Rankings
