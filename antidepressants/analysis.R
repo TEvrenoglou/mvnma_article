@@ -1,9 +1,9 @@
 #
-# Install R package mvnma
-#
+# Install R package mvnma from CRAN
+install.packages("mvnma")
+# or install from GitHub
 # install.packages("remotes")
 # remotes::install_github("TEvrenoglou/mvnma", ref = "main")
-
 
 #
 # Load libraries
