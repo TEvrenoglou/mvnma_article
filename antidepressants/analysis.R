@@ -47,31 +47,31 @@ settings.meta(common = FALSE)
 #
 pw1 <- pairwise(treat = list(treatment1, treatment2, treatment3),
   event = list(resp1, resp2, resp3), n = list(n1, n2, n3),
-  studlab = id, data = dat.linde2015, sm = "OR")
+  studlab = id, data = Linde2015, sm = "OR")
 #
 # Early remissions
 #
 pw2 <- pairwise(treat = list(treatment1, treatment2, treatment3),
   event = list(remi1, remi2, remi3), n = list(n1, n2, n3),
-  studlab = id, data = dat.linde2015, sm = "OR")
+  studlab = id, data = Linde2015, sm = "OR")
 #
 # Adverse events
 #
 pw3 <- pairwise(treat = list(treatment1, treatment2,treatment3),
   event = list(ae1, ae2, ae3),  n = list(n1, n2, n3),
-  studlab = id, data = dat.linde2015, sm = "OR")
+  studlab = id, data = Linde2015, sm = "OR")
 #
 # Loss to follow-up
 #
 pw4 <- pairwise(treat = list(treatment1, treatment2, treatment3),
   event = list(loss1, loss2, loss3), n = list(n1, n2, n3),
-  studlab = id, data = dat.linde2015, sm = "OR")
+  studlab = id, data = Linde2015, sm = "OR")
 #
 # Loss_to_follow_up_(AE)
 #
 pw5 <- pairwise(treat = list(treatment1, treatment2, treatment3),
   event = list(loss.ae1, loss.ae2, loss.ae3), n = list(n1, n2, n3),
-  studlab = id, data = dat.linde2015, sm = "OR", allstudies = TRUE)
+  studlab = id, data = Linde2015, sm = "OR", allstudies = TRUE)
 #
 # Define outcome labels
 #
@@ -93,24 +93,24 @@ outcomes <- c("Early_Response", "Early_Remission", "Adverse_events",
 lb.rho <- c(0, -1, -1, -1, -1, -1, -1, 0, 0, 0)
 ub.rho <- c(1, 0, 0, 0, 0, 0, 0, 1, 1, 1)
 #
-set.seed(1909)
-# Fit the mvNMA(standard) model
+# set.seed(1909)
+# # Fit the mvNMA(standard) model
 # mvNMA.standard<- mvnma(pw1, pw2, pw3, pw4, pw5,
 #   lower.rho = lb.rho, upper.rho = ub.rho,
-#   reference.group = "Placebo", 
+#   reference.group = "Placebo",
 #   outclab = outcomes,
 #   n.iter = 30000, n.burnin = 10000)
-# #
+# # #
 # saveRDS(mvNMA.standard,
 #   file = paste0(subdir, "results/mvNMA.standard.rds"))
-# 
-# Fit the mvNMA(DM) model
+# # 
+# # Fit the mvNMA(DM) model
 # mvNMA.DM <- mvnma(pw1, pw2, pw3, pw4, pw5,
 #   lower.rho = lb.rho, upper.rho = ub.rho,
 #   method = "DM", reference.group = "Placebo",
 #   outclab = outcomes,n.domain = 2, ## first two pairwise objects (pw1,pw2) related to one outcome domain (i.e. efficacy) and the rest in the other (i.e. safety)
 #   n.iter = 30000, n.burnin = 10000)
-# # #
+# # # #
 # saveRDS(mvNMA.DM, file = paste0(subdir, "results/mvNMA.DM.rds"))
 #
 # Load results stored in "results" folder
