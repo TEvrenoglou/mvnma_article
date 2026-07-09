@@ -81,17 +81,17 @@ outcomes <- c("Pain", "Disability")
 #   reference.group = "No treatment",
 #   outclab = outcomes,
 #   n.iter = 30000, n.burnin = 10000)
-# #
+# # #
 # saveRDS(mvNMA.standard,
 #   file = paste0(subdir, "results/mvNMA.standard.rds"))
-# 
-# Fit the mvNMA(DM) model 
+# # 
+# # Fit the mvNMA(DM) model
 # mvNMA.DM <- mvnma(pw1,pw2,
 #   reference.group = "No treatment",
 #   method = "DM",
 #   outclab = outcomes,
 #   n.iter = 30000, n.burnin = 10000)
-# #
+# # #
 # saveRDS(mvNMA.DM, file = paste0(subdir, "results/mvNMA.DM.rds"))
 
 
