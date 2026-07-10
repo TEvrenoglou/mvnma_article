@@ -155,8 +155,7 @@ dev.off()
 # Define direction of effect for each outcome
 #
 sv <- c("undesirable", "undesirable", "desirable", "desirable", "desirable")
-type <-
-  as.character(sv, levels = c("undesirable", "desirable"), labels = c("B", "H"))
+type <- c("B","B","H","H","H") 
 
 # Outcome-specific SUCRA values for mvNMA(standard)
 #
