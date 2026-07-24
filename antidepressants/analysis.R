@@ -99,7 +99,7 @@ ub.rho <- c(1, 0, 0, 0, 0, 0, 0, 1, 1, 1)
 #   lower.rho = lb.rho, upper.rho = ub.rho,
 #   reference.group = "Placebo",
 #   outclab = outcomes,
-#   n.iter = 30000, n.burnin = 10000)
+#   n.iter = 60000, n.burnin = 15000)
 # # #
 # saveRDS(mvNMA.standard,
 #   file = paste0(subdir, "results/mvNMA.standard.rds"))
@@ -109,7 +109,7 @@ ub.rho <- c(1, 0, 0, 0, 0, 0, 0, 1, 1, 1)
 #   lower.rho = lb.rho, upper.rho = ub.rho,
 #   method = "DM", reference.group = "Placebo",
 #   outclab = outcomes,n.domain = 2, ## first two pairwise objects (pw1,pw2) related to one outcome domain (i.e. efficacy) and the rest in the other (i.e. safety)
-#   n.iter = 30000, n.burnin = 10000)
+#   n.iter = 60000, n.burnin = 15000)
 # # # #
 # saveRDS(mvNMA.DM, file = paste0(subdir, "results/mvNMA.DM.rds"))
 #
