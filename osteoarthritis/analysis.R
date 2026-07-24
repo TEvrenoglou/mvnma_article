@@ -73,15 +73,13 @@ outcomes <- c("Pain", "Disability")
 # Run mvnma() and store rds-files
 #
 #
-
-
+#set.seed(1909)
 # Fit the mvNMA(standard) model
-# set.seed(1909)
 # mvNMA.standard <- mvnma(pw1,pw2,
 #   reference.group = "No treatment",
 #   outclab = outcomes,
-#   n.iter = 30000, n.burnin = 10000)
-# # #
+#   n.iter = 60000, n.burnin = 15000)
+# #
 # saveRDS(mvNMA.standard,
 #   file = paste0(subdir, "results/mvNMA.standard.rds"))
 # # 
@@ -90,7 +88,7 @@ outcomes <- c("Pain", "Disability")
 #   reference.group = "No treatment",
 #   method = "DM",
 #   outclab = outcomes,
-#   n.iter = 30000, n.burnin = 10000)
+#   n.iter = 60000, n.burnin = 15000)
 # # #
 # saveRDS(mvNMA.DM, file = paste0(subdir, "results/mvNMA.DM.rds"))
 
